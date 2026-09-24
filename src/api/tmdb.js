@@ -2,7 +2,7 @@
 import { onceADay } from './cache';
 
 const BASE = 'https://api.themoviedb.org/3';
-const KEY = process.env.REACT_APP_TMDB_KEY;          // มาจากไฟล์ .env
+const KEY = process.env.REACT_APP_TMDB_be21291cb192714a0cb7d20c10ac3940;          // มาจากไฟล์ .env
 export const IMG = 'https://image.tmdb.org/t/p/w342'; // ต้นทางรูปโปสเตอร์
 export const CACHE_KEY = 'moviehub.movies';          // ชื่อกล่องใน localStorage
 
