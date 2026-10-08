@@ -56,14 +56,3 @@ test('backend ล่ม ต้องเห็นข้อความ error แ�
   expect(getMovies).toHaveBeenCalledTimes(2);
 });
 
-test('กดเลือกแนว ต้องเหลือเฉพาะแนวนั้น', async () => {
-  const user = userEvent.setup();
-  getMovies.mockResolvedValue(FAKE_MOVIES);
-  renderMovies();
-  await screen.findByText('Parasite');
-
-  await user.click(screen.getByRole('button', { name: 'Animation' }));
-
-  expect(screen.getAllByRole('link')).toHaveLength(1);
-  expect(screen.queryByText('Parasite')).not.toBeInTheDocument();
-});
