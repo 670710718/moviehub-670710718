@@ -21,7 +21,7 @@ export async function apiFetch(path, { method = 'GET', body, token } = {}) {
   const data = await res.json()                              //    อ่านคำตอบเป็น JSON
     .catch(() => ({ error: 'server ไม่ได้ตอบเป็น JSON' }));
   if (!res.ok) {                                             // 4) 400 / 401 / 404 / 409 มาลงตรงนี้
-    const err = new Error(data.error || `server ตอบกลับ ${res.status}`);
+    const err = new Error(data.error?.message ?? data.error ?? `server ตอบกลับ ${res.status}`);
     err.status = res.status;                                 //    แนบเลขไว้ให้หน้าเว็บใช้ต่อ
     throw err;
   }
@@ -69,6 +69,15 @@ export async function getMovies() {
   return data.items;
 }
 
-export async function getMovie(movieId) {
-  return apiFetch(`/api/movies/${movieId}`);   // ได้ { movie, reviews, myVote } 
+
+  export async function getMovie(movieId) {
+  const items = await getMovies();
+  const movie = items.find(m => String(m.id) === String(movieId));
+  if (!movie) {
+    const err = new Error('ไม่พบหนังเรื่องนี้');
+    err.status = 404;
+    throw err;
+  }
+  return movie;
 }
+
