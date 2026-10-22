@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../../auth/AuthContext';
 import { getAdminStats } from '../../api/backend';
-import { ErrorBox, Loading } from '../../components/admin/AdminStates';
+import { ErrorBox, Loading } from '../../pages/admin/AdminStates';
 
 // การ์ดตัวเลข 1 ใบ
 function StatCard({ label, value, to }) {

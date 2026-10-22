@@ -2,7 +2,7 @@ import { useEffect, useState } from 'react';
 import { Link, useNavigate, useParams } from 'react-router-dom';
 import { useAuth } from '../../auth/AuthContext';
 import { getAdminMovie, getGenres, createMovie, updateMovie, deleteMovie } from '../../api/backend';
-import { ErrorBox, Loading, ConfirmBox, btnPrimary, btnDanger, inputClass } from '../../components/admin/AdminStates';
+import { ErrorBox, Loading, ConfirmBox, btnPrimary, btnDanger, inputClass } from '../../pages/admin/AdminStates';
 
 // ฟอร์มเดียวใช้ 2 โหมด: ไม่มี :id = เพิ่มหนังใหม่, มี :id = แก้ไข (โหลดค่าเดิมมาใส่ก่อน)
 // ฟอร์มเช็กข้อมูลชั้นแรกให้ผู้ใช้เห็นเร็ว แต่ Go เช็กซ้ำทุกครั้ง เพราะฟอร์มนี้ข้ามได้ด้วย curl

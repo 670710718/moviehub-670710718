@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '../../auth/AuthContext';
 import { getAdminMembers, setMemberRole } from '../../api/backend';
-import { ErrorBox, Loading, ConfirmBox, inputClass } from '../../components/admin/AdminStates';
+import { ErrorBox, Loading, ConfirmBox, inputClass } from '../../pages/admin/AdminStates';
 
 const dateTH = (iso) => new Date(iso).toLocaleDateString('th-TH', { day: 'numeric', month: 'short', year: 'numeric' });
 

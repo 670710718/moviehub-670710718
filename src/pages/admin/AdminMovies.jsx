@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getMovies } from '../../api/backend';
-import { ErrorBox, Loading, btnPrimary, inputClass } from '../../components/admin/AdminStates';
+import { ErrorBox, Loading, btnPrimary, inputClass } from '../../pages/admin/AdminStates';
 
 // ตารางหนังทั้งหมด: ใช้ GET /api/movies ตัวเดิม (สาธารณะ) แล้วกรองในเครื่องเหมือนหน้า Movies
 // ส่วนที่ต้องเป็น admin คือปุ่มแก้ไข/เพิ่ม ซึ่งพาไปหน้าฟอร์ม
